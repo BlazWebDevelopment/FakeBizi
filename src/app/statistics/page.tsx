@@ -29,7 +29,7 @@ const inactive = allCompanies.filter((c) => c.status === "Inactive").length;
 const dissolved = allCompanies.filter((c) => c.status === "Dissolved").length;
 const stateCount = new Set(allCompanies.map((c) => c.stateOfFormation)).size;
 const industryCount = new Set(allCompanies.map((c) => c.industry)).size;
-const totalEmployees = allCompanies.reduce((s, c) => s + c.employees, 0);
+const totalEmployees = allCompanies.reduce((s, c) => s + (typeof c.employees === "number" ? c.employees : 0), 0);
 
 const topStates = getTopItems("stateOfFormation", 10);
 const topIndustries = getTopItems("industry", 10);
