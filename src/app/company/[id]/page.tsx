@@ -98,9 +98,17 @@ export default async function CompanyPage({ params }: PageProps) {
           <div className="flex items-start gap-4">
             <CompanyLogo name={company.name} logo={company.logo} size="lg" />
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">
-                {company.name}
-              </h1>
+              <div className="flex items-center gap-3 flex-wrap">
+                <h1 className="text-2xl font-bold text-gray-900">
+                  {company.name}
+                </h1>
+                {company.lastUpdated && (
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-blue-600 bg-blue-50 rounded-full px-2.5 py-1 ring-1 ring-inset ring-blue-600/10">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                    Updated {company.lastUpdated}
+                  </span>
+                )}
+              </div>
               {company.dba !== company.name && (
                 <p className="text-sm text-gray-500 mt-1">
                   DBA: {company.dba}
@@ -208,7 +216,7 @@ export default async function CompanyPage({ params }: PageProps) {
               Employees
             </p>
             <p className="text-xl font-bold text-gray-900 mt-1">
-              {company.employees.toLocaleString()}
+              {typeof company.employees === "number" ? company.employees.toLocaleString() : company.employees}
             </p>
           </div>
           <div>

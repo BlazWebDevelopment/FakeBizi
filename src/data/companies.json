@@ -1,5 +1,31 @@
 [
   {
+    "id": "ftf-001",
+    "name": "Fraud Task Force",
+    "dba": "Fraud Task Force",
+    "logo": "/logos/ftf.png",
+    "entityType": "Federal Agency",
+    "status": "Active",
+    "stateOfFormation": "Washington D.C.",
+    "registrationDate": "2025-01-20",
+    "owner": "Donald J. Trump & JD Vance",
+    "registeredAgent": "U.S. Department of Justice",
+    "email": "contact@fraudtaskforce.gov",
+    "address": {
+      "street": "1600 Pennsylvania Avenue NW",
+      "city": "Washington",
+      "state": "DC",
+      "zip": "20500"
+    },
+    "industry": "Government",
+    "ein": "00-0000001",
+    "annualRevenue": "N/A",
+    "employees": "/",
+    "website": "https://fraudtaskforce.gov",
+    "description": "Federal task force dedicated to investigating and prosecuting fraud, waste, and abuse across government programs and private enterprise.",
+    "lastUpdated": "2 min ago"
+  },
+  {
     "id": "1",
     "name": "Apex Dynamics LLC",
     "dba": "Apex Dynamics",

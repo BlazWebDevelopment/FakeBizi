@@ -21,7 +21,8 @@ export interface Company {
   industry: string;
   ein: string;
   annualRevenue: string;
-  employees: number;
+  employees: number | string;
   website: string;
   description: string;
+  lastUpdated?: string;
 }

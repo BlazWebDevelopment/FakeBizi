@@ -64,9 +64,17 @@ export default function CompanyCard({ company }: { company: Company }) {
         </div>
 
         <div className="mt-3 pt-3 border-t border-gray-100 flex items-center justify-between">
-          <p className="text-xs text-gray-500">
-            <span className="font-medium text-gray-600">{company.owner}</span>
-          </p>
+          <div className="flex items-center gap-2 min-w-0">
+            <p className="text-xs text-gray-500 truncate">
+              <span className="font-medium text-gray-600">{company.owner}</span>
+            </p>
+            {company.lastUpdated && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-medium text-blue-600 bg-blue-50 rounded-full px-2 py-0.5 ring-1 ring-inset ring-blue-600/10 shrink-0">
+                <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+                Updated {company.lastUpdated}
+              </span>
+            )}
+          </div>
           <svg
             className="w-4 h-4 text-gray-300 group-hover:text-blue-500 transition-colors"
             fill="none"
