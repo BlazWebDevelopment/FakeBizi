@@ -3,6 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import StatusBadge from "@/components/StatusBadge";
 import CompanyLogo from "@/components/CompanyLogo";
+import LogoLightbox from "@/components/LogoLightbox";
 import companies from "@/data/companies.json";
 import type { Company } from "@/data/types";
 
@@ -96,7 +97,11 @@ export default async function CompanyPage({ params }: PageProps) {
       <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8">
         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
           <div className="flex items-start gap-4">
-            <CompanyLogo name={company.name} logo={company.logo} size="lg" />
+            {company.logo ? (
+              <LogoLightbox src={company.logo} alt={company.name} />
+            ) : (
+              <CompanyLogo name={company.name} size="lg" />
+            )}
             <div>
               <div className="flex items-center gap-3 flex-wrap">
                 <h1 className="text-2xl font-bold text-gray-900">
